@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Animales.Models.Animal>
+@{
+    ViewData["Title"] = "Listado";
+}
+<h2>Listado de Ganado</h2>
+<table class="table table-bordered table-hover">
+    <thead>
+    <th>DIIO</th>
+    <th>Nombre</th>
+    <th>Sexo</th>
+    <th>Raza</th>
+    <th>Edad</th>
+    <th>Tipo</th>
+    <th>Rebaño</th>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => p.DIIO)</td>
+                <td>@Html.DisplayFor(m => p.Nombre)</td>
+                <td>@Html.DisplayFor(m => p.Sexo)</td>
+                <td>@Html.DisplayFor(m => p.Raza)</td>
+                <td>@Html.DisplayFor(m => p.Edad)</td>
+                <td>@Html.DisplayFor(m => p.Tipo)</td>
+                <td>@Html.DisplayFor(m => p.Rebaño)</td>
+                <td>@Html.ActionLink("Visualizar", "Ficha", new { diio = p.DIIO })</td>
+            </tr>
+        }
+    </tbody>
+</table>
